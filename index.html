@@ -11,6 +11,7 @@
         a {
             color: #531e0b; /* Makes hyperlinks black */
             text-decoration: none; /* Removes underline from hyperlinks */
+            cursor: pointer; /* Makes it clear it's clickable */
         }
         .right-align {
             text-align: right;
@@ -23,20 +24,28 @@
     <h1 style="font-size: 16px;">kenneth federico moreno kiernan <!--(b. [n.] <a href="https://www.openstreetmap.org/relation/3474227#map=8/-35.142/-56.724">rio de la plata</a>),--> </h1>
         <p>
         industrial designer, design researcher<br>   
-        <!-- present-time [momento-presente]: m.sc. geomatics tu-delft.<br> -->    
-        <a href="mailto:kiernanmoreno@gmail.com">contact</a>
-        <!-- <p>work and curriculum vitae may be requested vias
-        <a href="mailto:kiernanmoreno@gmail.com">correspondence</a>. <br>
-        [trabajo y curriculum puede ser pedido via
-        <a href="mailto:kiernanmoreno@gmail.com">correspondencia</a>.]</p> -->
+        <!-- present-time [momento-presente]: m.sc. geomatics tu-delft.<br> -->
+        <a id="contact-link" onclick="revealEmail('contact-link')">contact</a>
+        </p>
 
     <!-- right-aligned text -->
     <div class="right-align">
         <p>
             diseñador industrial, diseño en investigación<br>
-            <a href="mailto:kiernanmoreno@gmail.com">contacto</a>
+            <a id="contacto-link" onclick="revealEmail('contacto-link')">contacto</a>
         </p>
     </div>
+
+   
+    <script>  <!--JavaScript function to reveal the email address -->
+        function revealEmail(id) {
+            const email = "kiernanmoreno@gmail.com";
+            const link = document.getElementById(id);
+            link.href = "mailto:" + email;
+            link.textContent = email;
+        }
+    </script>
+    
 </body>
 </html>
 
