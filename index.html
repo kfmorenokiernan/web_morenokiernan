@@ -54,7 +54,7 @@
 
     roleTextElement.innerHTML = `
       ${selected.textStart}
-      <a href="#" onclick="revealEmail(this)">[${selected.contactLabel}]</a>
+      <a href="#" onclick="revealEmail(this)">${selected.contactLabel}</a>
     `;
 
     function revealEmail(linkElement) {
