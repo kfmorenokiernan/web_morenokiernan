@@ -6,10 +6,10 @@
     <title>moreno kiernan</title>
     <style>
         body {
-            color: #531e0b; /* Makes all text black */
+            color: #531e0b; /* Makes all text choosen colour */
         }
         a {
-            color: #531e0b; /* Makes hyperlinks black */
+            color: #531e0b; /* Makes hyperlinks choosen colour */
             text-decoration: none; /* Removes underline from hyperlinks */
             cursor: pointer; /* Makes it clear it's clickable */
         }
@@ -23,8 +23,10 @@
     <!-- left-aligned text -->
     <h1 style="font-size: 16px;">kenneth federico moreno kiernan <!--(b. [n.] <a href="https://www.openstreetmap.org/relation/3474227#map=8/-35.142/-56.724">rio de la plata</a>),--> </h1>
         <p>
-        industrial designer, design researcher<br>   
+        industrial designer, design researcher<br>
+        <a id="industrial designer, design researcher" onclick="reveal    
         <!-- present-time [momento-presente]: m.sc. geomatics tu-delft.<br> -->
+            
         <a id="contact-link" onclick="revealEmail('contact-link')">contact</a>
         </p>
 
@@ -38,6 +40,15 @@
 
    <!--JavaScript function to reveal the email address -->
     <script> 
+
+    const texts = [
+      "industrial designer, design researcher",
+      "diseñador industrial, investigador en diseño"
+    ];
+    // Randomly select either 0 or 1
+    const randomIndex = Math.floor(Math.random() * texts.length);
+    // Set the text in the element
+    document.getElementById("role-text").innerText = texts[randomIndex];
         function revealEmail(id) {
             const email = "kiernanmoreno@gmail.com";
             const link = document.getElementById(id);
