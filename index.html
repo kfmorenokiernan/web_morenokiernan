@@ -21,6 +21,7 @@
     
 <body>
     <!-- left-aligned text -->
+    <h1 id="role-text"></h1>
     <h1 style="font-size: 16px;">kenneth federico moreno kiernan <!--(b. [n.] <a href="https://www.openstreetmap.org/relation/3474227#map=8/-35.142/-56.724">rio de la plata</a>),--> </h1>
         <p>
         industrial designer, design researcher<br>
@@ -38,9 +39,8 @@
         <!--</p> -->
     <!--</div> -->
 
-   <!--JavaScript function to reveal the email address -->
+   
     <script> 
-
     const texts = [
       "industrial designer, design researcher",
       "diseñador industrial, investigador en diseño"
@@ -48,7 +48,9 @@
     // Randomly select either 0 or 1
     const randomIndex = Math.floor(Math.random() * texts.length);
     // Set the text in the element
-    document.getElementById("role-text").innerText = texts[randomIndex];
+
+    <!--JavaScript function to reveal the email address -->    
+    document.getElementById("role-text").innerText = texts[randomIndex]; 
         function revealEmail(id) {
             const email = "kiernanmoreno@gmail.com";
             const link = document.getElementById(id);
