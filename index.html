@@ -22,7 +22,7 @@
 <body>
     <!-- left-aligned text -->
     <h1 style="font-size: 16px;">kenneth federico moreno kiernan <!--(b. [n.] <a href="https://www.openstreetmap.org/relation/3474227#map=8/-35.142/-56.724">rio de la plata</a>),--> </h1>
-    <h1 id="role-text"></h1>
+    <h1 id="role-text" style="font-size: 16px;"></h1>
         <p>    
             
         <a id="contact-link" onclick="revealEmail('contact-link')">contact</a>
@@ -37,24 +37,35 @@
     <!--</div> -->
 
    
-    <script> 
-    const texts = [
-      "industrial designer, design researcher. argentina/netherlands. [contact]",
-      "diseñador industrial, investigador en diseño. argentina/países bajos. [contacto]"
-    ];
-    // Randomly select either 0 or 1
-    const randomIndex = Math.floor(Math.random() * texts.length);
-    // Set the text in the element
+    <script>
+    const email = "kiernanmoreno@gmail.com";
 
-    <!--JavaScript function to reveal the email address -->    
-    document.getElementById("role-text").innerText = texts[randomIndex]; 
-        function revealEmail(id) {
-            const email = "kiernanmoreno@gmail.com";
-            const link = document.getElementById(id);
-            link.href = "mailto:" + email;
-            link.textContent = email;
-        }
-    </script>
+    const options = [
+      {
+        textStart: "industrial designer, design researcher. argentina/netherlands. ",
+        contactLabel: "contact"
+      },
+      {
+        textStart: "diseñador industrial, investigador en diseño. argentina/países bajos. ",
+        contactLabel: "contacto"
+      }
+    ];
+
+    const randomIndex = Math.floor(Math.random() * options.length);
+    const selected = options[randomIndex];
+
+    const roleTextElement = document.getElementById("role-text");
+
+    roleTextElement.innerHTML = `
+      ${selected.textStart}
+      <a href="#" onclick="revealEmail(this)">[${selected.contactLabel}]</a>
+    `;
+
+    function revealEmail(linkElement) {
+      linkElement.href = "mailto:" + email;
+      linkElement.textContent = email;
+    }
+  </script>
     
 </body>
 </html>
